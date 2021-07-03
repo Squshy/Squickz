@@ -9,8 +9,8 @@ const NUM_RESULTS = 5;
 
 export const HighScores = () => {
   const [difficulty, setDifficulty] = useState("Easy");
-  console.log(DIFFICULTIES[0].difficulty)
-  console.log(`Current difficulty: ${difficulty}`)
+  console.log(DIFFICULTIES[0].difficulty);
+  console.log(`Current difficulty: ${difficulty}`);
   const [hiScoreData, loading] = useFetchHighScores(difficulty, NUM_RESULTS);
 
   return (
@@ -27,7 +27,11 @@ export const HighScores = () => {
             </>
           ))}
         </div>
-        <HighScoreTable data={``} difficulty={``} />
+        {loading ? (
+          <div className={`m-5 mx-auto`}>...Loading</div>
+        ) : (
+          <HighScoreTable data={hiScoreData} difficulty={``} />
+        )}
       </div>
       <Footer />
     </>

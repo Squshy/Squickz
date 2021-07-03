@@ -1,6 +1,6 @@
 import React from "react";
 
-export const HighScoreTable = ({ data, user, score, time }) => {
+export const HighScoreTable = ({ data }) => {
   return (
     <>
       <table className={`table text-white space-y-6 text-sm m-5 w-1/2 mx-auto`}>
@@ -12,11 +12,13 @@ export const HighScoreTable = ({ data, user, score, time }) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
-            <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
-            <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
-          </tr>
+          {data.map((info, index) => (
+            <tr key={index}>
+              <td className={`text-left bg-simple-gray-41 p-5`}></td>
+              <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
+              <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

@@ -66,11 +66,10 @@ app.post("/getDifficultyHighScores", (req, res) => {
     list
   ) {
     if (list.length > 0) {
-      console.log("Returned List from x highscores");
+      console.log(`Returning List from ${req.body.num_results} highscores for difficulty ${req.body.difficulty}`);
       // sort the list lowest to highest
       list.sort((x, y) => (x.score > y.score ? 1 : y.score > x.score ? -1 : 0));
-      console.log(list);
-      res.send(list.slice(Math.max(list.length - req.num_results, 0)));
+      res.send(list.slice(Math.max(list.length - req.body.num_results, 0)));
     } else {
       console.log("ERROR! no results on that data");
       res.send([]);
