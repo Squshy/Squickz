@@ -30,7 +30,10 @@ export const HighScores = () => {
         {loading ? (
           <div className={`m-5 mx-auto`}>...Loading</div>
         ) : (
+          <div className={`mx-auto w-full h-full m-5`}>
+          <p className={`text-2xl mx-auto text-center`}>Showing highscores for {difficulty} difficulty.</p>
           <HighScoreTable data={hiScoreData} difficulty={``} />
+          </div>
         )}
       </div>
       <Footer />

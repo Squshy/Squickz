@@ -13,10 +13,10 @@ export const HighScoreTable = ({ data }) => {
         </thead>
         <tbody>
           {data.map((info, index) => (
-            <tr key={index}>
-              <td className={`text-left bg-simple-gray-41 p-5`}></td>
-              <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
-              <td className={`text-left bg-simple-gray-41 p-5`}>Hey</td>
+            <tr key={index} className={`border-gray-500 border-b-2`}>
+              <td className={`text-left bg-simple-gray-41 p-5`}>{info.user}</td>
+              <td className={`text-left bg-simple-gray-41 p-5`}>{info.score}</td>
+              <td className={`text-left bg-simple-gray-41 p-5`}>{info.time}</td>
             </tr>
           ))}
         </tbody>
